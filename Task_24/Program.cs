@@ -1,15 +1,15 @@
-﻿/* Принимаем на вход число (А) и выдает сумму чисел от 1 до А
+﻿/* Принимаем на вход число (N) и выдает количество цифр в числе.
 */
-void GetSumNums(int number)
+
+int GetCountNums(int number)
 {
-    int sum = 0;
-    for (int i = 1; i <= Math.Abs(number); i++) // Math.Abs число по модулю
-        sum = sum + i;
-    Console.WriteLine($"Сумма цифр от 1 до {number} = {sum}");
+    string str = Convert.ToString(number);
+    int sum = str.Length;
+    return sum;
 }
+
 Console.Clear();
 Console.WriteLine("Введите число");
-GetSumNums(Convert.ToInt32(Console.ReadLine()));
-
-Console.WriteLine("Введите число");
-GetSumNums(Convert.ToInt32(Console.ReadLine()));
+int num = Convert.ToInt32(Console.ReadLine());
+int sum = GetCountNums(num);
+Console.WriteLine($"Количество цифр в числе {num} = {sum}");
